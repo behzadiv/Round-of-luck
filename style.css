@@ -2,6 +2,23 @@
     margin: 0;
     padding: 0;
 }
+.container{
+    background-color: rgba(182, 169, 169, 0.315);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 2rem;
+}
+.circles-container{
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   max-width: 600px;
+   margin: 0 auto;
+   padding: 2rem;
+   transform: rotateZ(23deg);
+   margin-top: -40px;
+}
 .first-circle {
  
     width: 1rem;
@@ -12,6 +29,7 @@
     border-right: 150px solid rgba(0, 128, 0, 0.411);
     border-radius:100%;
     position:relative;
+   
 }
 
 
@@ -71,6 +89,8 @@ p{
 }
 .circle-two-container{
     position: absolute;
-    top: 9px;
-    left: 9px;
+    
+}
+.arrow{
+    font-size: 50px;
 }
