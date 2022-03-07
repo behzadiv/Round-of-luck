@@ -3,24 +3,25 @@
     padding: 0;
 }
 .container{
-    background-color: rgba(182, 169, 169, 0.315);
+    background-color: rgba(230, 218, 218, 0.733);
     display: flex;
     flex-direction: column;
     align-items: center;
     padding-top: 2rem;
     border-radius: 15px;
     padding: 2rem 0;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
 }
 .circles-container{
    display: flex;
    align-items: center;
    justify-content: center;
-   max-width: 600px;
-   margin: 0 auto;
    padding: 2rem;
    transform: rotateZ(23deg);
    margin-top: -40px;
-   z-index: 1;
+   /* z-index: 1; */
 }
 .first-circle {
     width: 1rem;
@@ -43,46 +44,49 @@
     position:relative;
     transform: rotateZ(45deg);
 }
-p{
+.myPrizas{
     width: 100%;
     height: 100%;
     color: rgb(255, 255, 255); 
     text-align: center;
     font-weight: 700;
-    font-size: 1.2rem;
-    
+    font-size: 1.2rem;   
+}
+.myPrizas::before{
+    content:"$"
 }
 .first{
-    width: 100px;
+    width: 70px;
     height: 40px;
     position: absolute;
-    top: -110px;
-    left: -5px;
-    transform: rotateZ(-70deg);
+    top: -108px;
+    left: 11px;
+    transform: rotateZ(22deg);    
 }
 .second{
-    width: 100px;
+    width: 70px;
     height: 40px;
     position: absolute;
-    top: -55px;
-    left: -140px;
-    transform: rotateZ(20deg);
+    top: -50px;
+    left: -122px;
+    transform: rotateZ(-68deg);
 }
 .third{
-    width: 100px;
+    width: 70px;
     height: 40px;
-   position: absolute;
-    top: 85px;
-    left:-85px;
-    transform: rotateZ(-67deg);
+    margin: 0 auto;
+    position: absolute;
+    top: 84px;
+    left:-64px;
+    transform: rotateZ(202deg);
 }
 .forth{
-    width: 100px;
+    width: 70px;
     height: 40px;
     position: absolute;
-    top: 33px;
-    left:55px;
-    transform: rotateZ(200deg);
+    top: 28px;
+    left:68px;
+    transform: rotateZ(113deg);
 }
 
 .circle-one-container{
@@ -115,65 +119,59 @@ p{
     transition: all 300ms ease-in;
     outline: none;
 }
+.btn[disabled]{
+    cursor: no-drop;
+    background-color: rgba(165, 170, 165, 0.904);
+}
+.btn[disabled]:hover{
+    cursor: no-drop;
+    background-color: rgba(165, 170, 165, 0.904);
+}
 .btn:hover{
     background-color: blueviolet;
 }
 
-@keyframes arrowAnim {
-    0%{
-        transform:rotateZ(10deg);
-    }
-    5%{
-        transform:rotateZ(-10deg);
-    }
-    10%{
-        transform:rotateZ(10deg);
-    }
-    15%{
-        transform:rotateZ(-10deg);
-    }
-    20%{
-        transform:rotateZ(10deg);
-    }
-    25%{
-        transform:rotateZ(-10deg);
-    }
-    30%{
-        transform:rotateZ(10deg);
-    }
-    35%{
-        transform:rotateZ(-10deg);
-    }
-    40%{
-        transform:rotateZ(10deg);
-    }
-    50%{
-        transform:rotateZ(-10deg);
-    }
-    60%{
-        transform:rotateZ(10deg);
-    }
-    70%{
-        transform:rotateZ(-10deg);
-    }
-    80%{
-        transform:rotateZ(10deg);
-    }
-    90%{
-        transform:rotateZ(-10deg);
-    }
-    100%{
-        transform: rotateZ(10deg);
-    }
+.modal{
+    position: fixed;
+    top: 0;
+    background-color: rgba(160, 134, 134, 0.863);
+    width: 100%;
+    height: 100vh;
+    padding-top: 200px;
+    opacity: 0;
+    transition: opacity 500ms ease-in-out;
 }
-@keyframes rotationCircleTwo {
-    0%{
-        /* transform: rotateZ(23deg); */
-    }
-    50%{
-        /* transform: rotateZ(360deg); */
-    }
-    100%{
-        transform: rotateZ(283deg);
-    }
+.modal-content{
+    width:150px ;
+    margin: 0 auto;
+    background-color: #fefefee8;
+    height: fit-content;
+    padding:1rem 4rem;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#modal-title{
+    color: red;
+    font-size: xx-large;
+}
+.modal-body{
+    margin-top: -30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgb(5, 51, 92);
+}
+#tryAgain{
+    cursor: pointer;
+    border: none;
+    color: white;
+    background-color: tomato;
+    padding: .5rem 1rem;
+    border-radius: 5px;
+    transition: all 200ms ease-in;
+}
+#tryAgain:hover{
+    background-color: rgb(250, 76, 45);
 }
