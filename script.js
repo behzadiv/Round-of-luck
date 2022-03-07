@@ -6,7 +6,7 @@ const myPrizasToArray = Object.values(myPrizas);
 let modalIntervalId = null;
 const showPrizeModal = (prizeValue) => {
   document.getElementById("modal").style.opacity = "1";
-  document.getElementById("prizeValue").innerHTML = ` $${prizeValue}`;
+  document.getElementById("prizeValue").innerHTML = `  $${prizeValue}`;
   if(prizeValue===0){
       document.getElementById("modal-title").innerHTML = `<i class="fa-solid fa-face-sad-tear"></i> Sorry`
   }
@@ -33,6 +33,7 @@ const getPrize = () => {
   const prizeValue = selectedPrize[0].innerHTML;
   modalIntervalId = setInterval(() => {
     showPrizeModal(parseInt(prizeValue));
+    document.getElementById("last-prize-value").innerHTML = ` $${prizeValue}`
   }, 600);
 };
 const closeModal = () => {
