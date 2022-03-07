@@ -16,7 +16,7 @@
   overflow: hidden;
 }
 .heading {
-  color: rgb(119, 0, 255);
+  color: rgb(255, 255, 255);
 }
 .circles-container {
   display: flex;
@@ -39,6 +39,7 @@
 .second-circle {
   width: 1rem;
   height: 1rem;
+  background-color: rgba(250, 245, 245, 0.279);
   border-top: 140px solid rgba(255, 0, 0, 0.26);
   border-left: 140px solid rgba(85, 85, 85, 0.438);
   border-bottom: 140px solid rgba(0, 0, 255, 0.397);
@@ -106,7 +107,7 @@
 }
 .arrow {
   font-size: 50px;
-  color: rgba(190, 22, 22, 0.685);
+  color: rgba(229, 255, 0, 0.973);
   z-index: 4;
 }
 .btn-container {
@@ -182,7 +183,7 @@
 }
 
 #last-prize-value {
-  color: red;
+  color: rgb(238, 255, 0);
 }
 .last-prize{
     color: white;
