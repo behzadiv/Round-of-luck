@@ -3,48 +3,46 @@ const myArrow = document.querySelector(".arrow");
 const myCircle = document.querySelector(".circles-container");
 const myPrizas = document.querySelectorAll(".myPrizas");
 const myPrizasToArray = Object.values(myPrizas);
-let modalIntervalId = null
-const showPrizeModal=(prizeValue)=>{
-    document.getElementById("modal").style.opacity = "1";
-    document.getElementById("prizeValue").innerHTML = ` $${prizeValue}`
-    if(prizeValue===0){
-        document.getElementById("modal-title").innerHTML = `<i class="fa-solid fa-face-sad-tear"></i> Sorry`
-    }
-    if(prizeValue<50 && prizeValue>0){
-        document.getElementById("modal-title").innerHTML = `<i class="fa-solid fa-face-frown"></i>`
-    }
-    if(prizeValue>=50 && prizeValue<1000){
-        document.getElementById("modal-title").innerHTML = `<i class="fa-solid fa-face-smile"></i>`
-    }
-    if(prizeValue===1000){
-        document.getElementById("modal-title").innerHTML = `<i class="fa-solid fa-face-grin-hearts"></i> Winner`
-    }
-}
+let modalIntervalId = null;
+const showPrizeModal = (prizeValue) => {
+  document.getElementById("modal").style.opacity = "1";
+  document.getElementById("prizeValue").innerHTML = ` $${prizeValue}`;
+  if(prizeValue===0){
+      document.getElementById("modal-title").innerHTML = `<i class="fa-solid fa-face-sad-tear"></i> Sorry`
+  }
+  else if(prizeValue<50 && prizeValue>0){
+      document.getElementById("modal-title").innerHTML = `<i class="fa-solid fa-face-frown"></i>`
+  }
+  else if(prizeValue>=50 && prizeValue<1000){
+      document.getElementById("modal-title").innerHTML = `<i class="fa-solid fa-face-smile"></i>`
+  }
+  else{
+      document.getElementById("modal-title").innerHTML = `<i class="fa-solid fa-face-grin-hearts"></i> Winner`
+  }
+};
 const getPrize = () => {
   let rectY = [];
-  console.log(myArrow.getBoundingClientRect());
-  myPrizasToArray.map((p)=>console.log(p,p.getBoundingClientRect()))
+  myPrizasToArray.map((p) => console.log(p, p.getBoundingClientRect()));
   myPrizasToArray.map((p) => rectY.push(p.getBoundingClientRect().y));
   rectY.sort((a, b) => {
     return a - b;
   });
   const selectedPrize = myPrizasToArray.filter(
     (p) => p.getBoundingClientRect().y === rectY[0]
-    );
-    const prizeValue = selectedPrize[0].innerHTML
-    console.log(prizeValue,rectY);
-    modalIntervalId = setInterval(() => {
-        showPrizeModal(parseInt(prizeValue))
-    }, 600);
+  );
+  const prizeValue = selectedPrize[0].innerHTML;
+  modalIntervalId = setInterval(() => {
+    showPrizeModal(parseInt(prizeValue));
+  }, 600);
 };
-const closeModal=()=>{
-    document.getElementById("modal").style.opacity = "0";
-    clearInterval(modalIntervalId)
-    myBtn.removeAttribute("disabled")
-}
+const closeModal = () => {
+  document.getElementById("modal").style.opacity = "0";
+  clearInterval(modalIntervalId);
+  myBtn.removeAttribute("disabled");
+};
 
 const myMove = () => {
-  myBtn.setAttribute("disabled","disabled")
+  myBtn.setAttribute("disabled", "disabled");
   let rotateDegree = Math.ceil(Math.random() * (2500 - 1500) + 1500);
   let id = null;
   let pos = 0;
